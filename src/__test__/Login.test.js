@@ -7,3 +7,8 @@ test("Checking component loaded ", () => {
     expect(screen.queryByText(/Login/)).toBeInTheDocument();
 });
 
+test("checking email &password inputs are empty", () => {
+    render(<Login />);
+    expect(screen.queryByPlaceholderText('Email')).toHaveValue("");
+    expect(screen.queryByPlaceholderText('Password')).toHaveValue("");
+})
